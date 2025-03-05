@@ -1,0 +1,74 @@
+/* Navbar styles */
+nav {
+    background: rgba(213, 210, 209, 0.508);
+    width: max-content;
+    display: block;
+    padding: 0.7rem 1.7rem;
+    z-index: 2;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2rem;
+    display: flex;
+    gap: 0.8rem;
+    border-radius: 3rem;
+    backdrop-filter: blur(12px);
+}
+
+nav a {
+    background-color: transparent;
+    padding: 0.9rem;
+    border-radius: 50%;
+    display: flex;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+nav a:hover {
+    background: rgba(0, 0, 0, 0.4);
+    color: #1728e5;
+}
+
+
+nav a.active {
+    background: var(--color-bg);
+    color: var(--color-white);
+}
+
+/* Tooltip styles */
+nav a::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background-color: #27262a;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+}
+
+nav a:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: 50px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Optional: Adding a smooth fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(10);
+    }
+}
