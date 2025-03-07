@@ -1,9 +1,9 @@
 # Personal Portfolio - React + Vite
 
 This is the source code for my personal portfolio website built with **React** and **Vite**. The website showcases my projects, skills, and experience, providing a quick overview of who I am and what I do.
-
- -**Live Demo**: https://yourportfolio.netlify.app
- -**GitHub Repository**: https://github.com/Anooj-KH/Portfolio
+##
+**Live Demo**: https://yourportfolio.netlify.app
+**GitHub Repository**: https://github.com/Anooj-KH/Portfolio
 
 ## Features
 
