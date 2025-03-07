@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Heropic from '../../assets/Images/herosection.png';
+import { FaDownload } from "react-icons/fa6";
+import OffCanvas from './OffCanvas'
 
 export default function Hero() {
     const hero = {
@@ -17,29 +19,9 @@ export default function Hero() {
         "JavaScript Enthusiast"
     ];
 
-    <style jsx>{`
-        @keyframes pulseAnimation {
-          0% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0.5;
-          }
-          100% {
-            opacity: 1;
-          }
-        }
-      
-        .animate-pulse {
-          animation: pulseAnimation 2s infinite;
-        }
-      
-        .font-serif {
-          font-family: 'Georgia', serif;
-        }
-      `}</style>
 
     const [currentTitle, setCurrentTitle] = useState(titles[0]);
+    const [isOffCanvasOpen, setIsOffCanvasOpen] = useState(false);
 
     useEffect(() => {
         let titleIndex = 0;
@@ -52,14 +34,15 @@ export default function Hero() {
         return () => clearInterval(titleInterval);
     }, []);
 
-
+    const toggleOffCanvas = () => {
+        setIsOffCanvasOpen(!isOffCanvasOpen);
+    };
 
     return (
         <>
             <section id="home" className="flex items-center justify-center h-screen">
                 <div className="flex flex-col lg:flex-row items-center justify-center space-x-0 lg:space-x-8 w-full max-w-screen-xl">
 
-                    {/* Text Section */}
                     <div
                         className="flex-1 text-center p-4"
                         data-aos="fade-up"
@@ -85,17 +68,38 @@ export default function Hero() {
                             I'm eager to help brands build great digital experiences and continue learning along the way.
                         </p>
 
+                        <div className="flex justify-center">
+                            <button
+                                className="mt-6 px-8 py-3 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white 
+                                           font-semibold rounded-full transform transition-all duration-300 ease-in-out hover:scale-105
+                                           hover:rotate-3 hover:shadow-lg hover:bg-gradient-to-l"
 
+                                data-aos="zoom-in"
+                                data-aos-delay="500"
+                                onClick={() => {
 
-                        <button
-                            className="mt-6 px-8 py-3 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white 
-                        font-semibold rounded-full transform transition-all duration-300 ease-in-out hover:scale-105
-                         hover:rotate-3 hover:shadow-lg hover:bg-gradient-to-l"
-                            data-aos="zoom-in"
-                            data-aos-delay="500"
-                        >
-                            {hero.btnText}
-                        </button>
+                                    const contactSection = document.getElementById("contact");
+                                    if (contactSection) {
+                                        contactSection.scrollIntoView({ behavior: "smooth" });
+                                    }
+                                }}
+                            >
+                                {hero.btnText}
+                            </button>
+
+                            <button
+                                className="mt-6 px-8 py-3 ml-5 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white 
+                                           font-semibold rounded-full transform transition-all duration-300 ease-in-out hover:scale-105 
+                                           hover:shadow-lg hover:bg-gradient-to-l flex items-center space-x-2"
+                                           
+                                data-aos="zoom-in"
+                                data-aos-delay="500"
+                                onClick={toggleOffCanvas}
+                            >
+                                Resume<FaDownload className="ml-2" />
+                            </button>
+
+                        </div>
                     </div>
 
                     {/* Image Section */}
@@ -108,6 +112,8 @@ export default function Hero() {
                     </div>
                 </div>
             </section>
+
+            <OffCanvas isOpen={isOffCanvasOpen} toggleOffCanvas={toggleOffCanvas} />
         </>
     );
 }

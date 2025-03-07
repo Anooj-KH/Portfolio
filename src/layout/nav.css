@@ -60,7 +60,6 @@ nav a:hover::after {
     animation: fadeIn 0.3s ease-out;
 }
 
-/* Optional: Adding a smooth fade-in effect */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -71,4 +70,20 @@ nav a:hover::after {
         opacity: 1;
         transform: translateY(10);
     }
+}
+
+/* To position the icon at the bottom-right */
+.scroll-up-icon {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px;  
+    font-size: 40px;  
+    color: #000;  
+    cursor: pointer;
+    z-index: 100;  
+    transition: transform 0.3s ease-in-out;
+}
+
+.scroll-up-icon:hover {
+    transform: scale(1.2);  
 }

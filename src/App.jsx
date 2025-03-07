@@ -38,6 +38,7 @@ export default function App() {
       <About />
       <Skills/>
       <Project/>
+      <Contact/>
     </div>
 
   );

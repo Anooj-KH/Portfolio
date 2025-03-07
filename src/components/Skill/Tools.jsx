@@ -27,7 +27,7 @@ export default function Tools() {
     
     return (
         <div className="md:container px-5 py-14">
-            <h4 className="subtitle text-2xl font-semibold italic text-center text-indigo-400 font-serif" data-aos="fade-down">
+            <h4 className="subtitle text-2xl font-semibold italic text-center text-indigo-500 font-serif" data-aos="fade-down">
                 Top Tools Used
             </h4>
 

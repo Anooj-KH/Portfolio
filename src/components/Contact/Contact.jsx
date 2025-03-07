@@ -1,60 +1,71 @@
 import { createElement, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
+import contactimg from '../../assets/Images/contact-img.svg';
 
-const Contact = ({ content }) => {
+const Contact = () => {
+
+    const content = {
+        Contact: {
+            title: "Contact Me",
+            subtitle: "GET IN TOUCH",
+        },
+    };
+
     const { Contact } = content;
     const form = useRef();
-
-    // Sending Email
+    
     const sendEmail = (e) => {
         e.preventDefault();
 
+        const formData = new FormData(form.current);
+        const emailData = {
+            from_name: formData.get("from_name"),
+            user_email: formData.get("user_email"),
+            message: formData.get("message"),
+            to_name: 'ANOOJ KH',
+        };
+
         emailjs
-            .sendForm(
-                'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY'
+            .send(
+                'service_qh1fe7r', 'template_qoq9lx4', emailData, 'QZA0Py0AXMjRDJPIi'
             )
             .then(
                 (result) => {
                     console.log(result.text);
-                    // Clear all input field values
                     form.current.reset();
-                    // Success toast message
                     toast.success("Email sent successfully!");
                 },
                 (error) => {
                     console.log(error.text);
-                    // Error toast message
                     toast.error(`Error: ${error.text}`);
                 }
             );
     };
 
     return (
-        <section className="bg-dark_primary text-white" id="contact">
+        <section className="py-20" id="contact">
             <Toaster />
-            <div className="md:container px-5 py-14">
-                <h2 className="title !text-white" data-aos="fade-down">
+            <div className="container mx-auto px-5 md:px-10">
+                <h2 className="title text-4xl font-semibold italic text-center text-indigo-600 font-serif mb-6" data-aos="fade-down">
                     {Contact.title}
                 </h2>
-                <h4 className="subtitle" data-aos="fade-down">
+                <h4 className="subtitle text-xl font-semibold italic text-center text-indigo-500 font-serif mb-12" data-aos="fade-down">
                     {Contact.subtitle}
                 </h4>
-                <br />
-                <div className="flex gap-10 md:flex-row flex-col">
+                <div className="flex flex-col md:flex-row gap-12">
                     <form
                         ref={form}
                         onSubmit={sendEmail}
                         data-aos="fade-up"
-                        className="flex-1 flex flex-col gap-5"
+                        className="flex-1 flex flex-col gap-5 p-6 bg rounded-lg shadow-lg"
                     >
-                        {/* Input fields with names matching emailjs template values */}
                         <input
                             type="text"
                             name="from_name"
                             placeholder="Name"
                             required
-                            className="border border-slate-600 p-3 rounded"
+                            className="border border-gray-400 p-4 rounded-lg bg-transparent font-bold  focus:outline-none focus:ring-2 focus:ring-blue-500 "
                         />
                         <input
                             type="email"
@@ -62,34 +73,32 @@ const Contact = ({ content }) => {
                             pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
                             placeholder="Email Id"
                             required
-                            className="border border-slate-600 p-3 rounded"
+                            className="border border-gray-400 p-4 rounded-lg bg-transparent font-bold focus:outline-none focus:ring-2 focus:ring-blue-500 "
                         />
                         <textarea
                             name="message"
                             placeholder="Message"
-                            className="border border-slate-600 p-3 rounded h-44"
+                            className="border border-gray-400 p-4 rounded-lg bg-transparent font-bold focus:outline-none focus:ring-2 focus:ring-blue-500 h-44 resize-none "
                             required
                         ></textarea>
                         <button
-                            className="btn self-start bg-white text-dark_primary"
+                            type="submit"
+                            className="mt-6 px-8 py-3 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white 
+                        font-bold rounded-full transform transition-all duration-300 ease-in-out hover:scale-105
+                         hover:shadow-lg hover:bg-gradient-to-l"
                         >
                             Submit
                         </button>
                     </form>
-                    <div className="flex-1 flex flex-col gap-5">
-                        {Contact.social_media.map((content, i) => (
-                            <div
-                                key={i}
-                                data-aos="fade-down"
-                                data-aos-delay={i * 430}
-                                className="flex items-center gap-2"
-                            >
-                                <h4 className="text-white">{createElement(content.icon)}</h4>
-                                <a className="font-Poppins" href={content.link} target="_blank" rel="noopener noreferrer">
-                                    {content.text}
-                                </a>
-                            </div>
-                        ))}
+
+                    <div className="flex-1 flex flex-col gap-8">
+                        <img
+                            src={contactimg}
+                            alt="Contact"
+                            data-aos="zoom-in"
+                            data-aos-delay="300"
+                            data-aos-duration="800"
+                        />
                     </div>
                 </div>
             </div>

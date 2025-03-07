@@ -58,7 +58,7 @@ export default function Skills() {
                 <h2 className="title text-4xl font-semibold italic text-center text-indigo-600 font-serif mt-5 p-4" data-aos="fade-down">
                     {content.skills.title}
                 </h2>
-                <h4 className="subtitle text-2xl font-semibold italic text-center text-indigo-400 font-serif" data-aos="fade-down">
+                <h4 className="subtitle text-2xl font-semibold italic text-center text-indigo-500 font-serif" data-aos="fade-down">
                     {content.skills.subtitle}
                 </h4>
                 <br />
