@@ -2,6 +2,7 @@ import { createElement, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 import contactimg from '../../assets/Images/contact-img.svg';
+import Footer from "./Footer";
 
 const Contact = () => {
 
@@ -14,7 +15,7 @@ const Contact = () => {
 
     const { Contact } = content;
     const form = useRef();
-    
+
     const sendEmail = (e) => {
         e.preventDefault();
 
@@ -44,7 +45,7 @@ const Contact = () => {
     };
 
     return (
-        <section className="py-20" id="contact">
+        <section  id="contact">
             <Toaster />
             <div className="container mx-auto px-5 md:px-10">
                 <h2 className="title text-4xl font-semibold italic text-center text-indigo-600 font-serif mb-6" data-aos="fade-down">
@@ -53,19 +54,19 @@ const Contact = () => {
                 <h4 className="subtitle text-xl font-semibold italic text-center text-indigo-500 font-serif mb-12" data-aos="fade-down">
                     {Contact.subtitle}
                 </h4>
-                <div className="flex flex-col md:flex-row gap-12">
+                <div className="flex flex-col md:flex-row gap-12 ">
                     <form
                         ref={form}
                         onSubmit={sendEmail}
                         data-aos="fade-up"
-                        className="flex-1 flex flex-col gap-5 p-6 bg rounded-lg shadow-lg"
+                        className="flex-1 flex flex-col gap-5 p-6 bg rounded-lg shadow-2xl transform transition-all duration-300 ease-in-out hover:scale-102"
                     >
                         <input
                             type="text"
                             name="from_name"
                             placeholder="Name"
                             required
-                            className="border border-gray-400 p-4 rounded-lg bg-transparent font-bold  focus:outline-none focus:ring-2 focus:ring-blue-500 "
+                            className="border border-gray-400 p-4 rounded-lg bg-transparent font-bold focus:outline-none focus:ring-2 focus:ring-blue-500  hover:border-gray-500 transition-all duration-300 ease-in-out"
                         />
                         <input
                             type="email"
@@ -73,19 +74,20 @@ const Contact = () => {
                             pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
                             placeholder="Email Id"
                             required
-                            className="border border-gray-400 p-4 rounded-lg bg-transparent font-bold focus:outline-none focus:ring-2 focus:ring-blue-500 "
+                            className="border border-gray-400 p-4 rounded-lg bg-transparent font-bold focus:outline-none focus:ring-2 focus:ring-blue-500  hover:border-gray-500 transition-all duration-300 ease-in-out"
                         />
                         <textarea
                             name="message"
                             placeholder="Message"
-                            className="border border-gray-400 p-4 rounded-lg bg-transparent font-bold focus:outline-none focus:ring-2 focus:ring-blue-500 h-44 resize-none "
+                            className="border border-gray-400 p-4 rounded-lg bg-transparent font-bold focus:outline-none focus:ring-2 focus:ring-blue-500  hover:border-gray-500 h-44 resize-none transition-all duration-300 ease-in-out"
                             required
                         ></textarea>
+ 
                         <button
                             type="submit"
                             className="mt-6 px-8 py-3 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white 
-                        font-bold rounded-full transform transition-all duration-300 ease-in-out hover:scale-105
-                         hover:shadow-lg hover:bg-gradient-to-l"
+                                      font-bold rounded-full transform transition-all duration-300 ease-in-out hover:scale-105
+                                      hover:shadow-lg hover:bg-gradient-to-l"
                         >
                             Submit
                         </button>
@@ -102,6 +104,7 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </section>
     );
 };

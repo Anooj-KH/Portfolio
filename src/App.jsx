@@ -20,12 +20,11 @@ export default function App() {
     });
 
     const handleScroll = () => {
-      AOS.refreshHard(); // Forces AOS to recalculate which elements are in the viewport
+      AOS.refreshHard(); 
     };
 
     window.addEventListener('scroll', handleScroll);
 
-    // Clean up the event listener when the component is unmounted
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };

@@ -1,5 +1,4 @@
-import React,{ useState, useEffect } from "react";
-
+import React, { useState, useEffect } from "react";
 
 export default function SkillCard({ skill }) {
     const [progress, setProgress] = useState(0);
@@ -9,7 +8,6 @@ export default function SkillCard({ skill }) {
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-
                         const timer = setInterval(() => {
                             if (progress < skill.progress) {
                                 setProgress((prev) => Math.min(prev + 1, skill.progress));
@@ -36,7 +34,7 @@ export default function SkillCard({ skill }) {
             id={skill.name}
             data-aos="fade-up"
             data-aos-delay={Math.random() * 400}
-            className="bg-white sm:cursor-pointer relative group w-full flex flex-col items-center gap-5 p-5 max-w-sm rounded-md border-2 border-slate-200 transform transition-all duration-300 ease-in-out shadow-lg hover:scale-105 hover:bg-slate-100 hover:shadow-4xl"
+            className="bg-white sm:cursor-pointer relative group w-full flex flex-col items-center gap-5 p-5 max-w-sm rounded-md border-2 border-slate-200 transform transition-all duration-300 ease-in-out shadow-lg hover:scale-105 hover:bg-slate-100 hover:shadow-4xl hover:border-indigo-600" // added hover:border-indigo-600
         >
             <div className="flex items-center gap-5">
                 <img
@@ -55,7 +53,9 @@ export default function SkillCard({ skill }) {
                     <div className="flex mb-2 items-center justify-between">
                         <div className="w-full bg-gray-200 rounded-full">
                             <div
-                                className="bg-teal-500 text-xs font-medium leading-none py-1 text-center text-teal-100 rounded-full transition-all duration-1000 ease-in-out"
+                                className="bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-xs h-4
+                                 font-medium leading-none py-1 text-center text-teal-100 rounded-full transition-all 
+                                 duration-3000 ease-in-out"
                                 style={{ width: `${progress}%` }}
                             >
                                 {progress}%
