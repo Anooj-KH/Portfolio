@@ -1,11 +1,10 @@
-import { createElement, useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 import contactimg from '../../assets/Images/contact-img.svg';
 import Footer from "./Footer";
 
 const Contact = () => {
-
     const content = {
         Contact: {
             title: "Contact Me",
@@ -15,37 +14,91 @@ const Contact = () => {
 
     const { Contact } = content;
     const form = useRef();
+    
+    const [formData, setFormData] = useState({
+        from_name: '',
+        user_email: '',
+        message: ''
+    });
+    
+    const [errors, setErrors] = useState({
+        from_name: '',
+        user_email: '',
+        message: ''
+    });
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    const validateForm = () => {
+        let formIsValid = true;
+        let errors = {};
+
+        // Name validation
+        if (!formData.from_name) {
+            formIsValid = false;
+            errors.from_name = "Name is required.";
+        }
+
+        // Email validation
+        const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$/;
+        if (!formData.user_email) {
+            formIsValid = false;
+            errors.user_email = "Email is required.";
+        } else if (!emailPattern.test(formData.user_email)) {
+            formIsValid = false;
+            errors.user_email = "Please enter a valid email.";
+        }
+
+        // Message validation
+        if (!formData.message) {
+            formIsValid = false;
+            errors.message = "Message is required.";
+        }
+
+        setErrors(errors);
+        return formIsValid;
+    };
 
     const sendEmail = (e) => {
         e.preventDefault();
 
-        const formData = new FormData(form.current);
-        const emailData = {
-            from_name: formData.get("from_name"),
-            user_email: formData.get("user_email"),
-            message: formData.get("message"),
-            to_name: 'ANOOJ KH',
-        };
+        if (validateForm()) {
+            const formDataObj = new FormData(form.current);
+            const emailData = {
+                from_name: formDataObj.get("from_name"),
+                user_email: formDataObj.get("user_email"),
+                message: formDataObj.get("message"),
+                to_name: 'ANOOJ KH',
+            };
 
-        emailjs
-            .send(
-                'service_qh1fe7r', 'template_qoq9lx4', emailData, 'QZA0Py0AXMjRDJPIi'
-            )
-            .then(
-                (result) => {
-                    console.log(result.text);
-                    form.current.reset();
-                    toast.success("Email sent successfully!");
-                },
-                (error) => {
-                    console.log(error.text);
-                    toast.error(`Error: ${error.text}`);
-                }
-            );
+            emailjs
+                .send(
+                    'service_qh1fe7r', 'template_qoq9lx4', emailData, 'QZA0Py0AXMjRDJPIi'
+                )
+                .then(
+                    (result) => {
+                        console.log(result.text);
+                        form.current.reset();
+                        setFormData({ from_name: '', user_email: '', message: '' });
+                        setErrors({ from_name: '', user_email: '', message: '' });
+                        toast.success("Email sent successfully!");
+                    },
+                    (error) => {
+                        console.log(error.text);
+                        toast.error(`Error: ${error.text}`);
+                    }
+                );
+        }
     };
 
     return (
-        <section  id="contact" className="mt-12">
+        <section id="contact" className="mt-12">
             <Toaster />
             <div className="container mx-auto px-5 md:px-10">
                 <h2 className="title text-4xl font-semibold italic text-center text-indigo-600 font-serif mb-6" data-aos="fade-down">
@@ -54,7 +107,7 @@ const Contact = () => {
                 <h4 className="subtitle text-xl font-semibold italic text-center text-indigo-500 font-serif mb-12" data-aos="fade-down">
                     {Contact.subtitle}
                 </h4>
-                <div className="flex flex-col md:flex-row gap-12 ">
+                <div className="flex flex-col md:flex-row gap-12">
                     <form
                         ref={form}
                         onSubmit={sendEmail}
@@ -64,30 +117,41 @@ const Contact = () => {
                         <input
                             type="text"
                             name="from_name"
+                            value={formData.from_name}
+                            onChange={handleInputChange}
                             placeholder="Name"
-                            required
-                            className="border border-gray-400 p-4 rounded-lg bg-transparent font-bold focus:outline-none focus:ring-2 focus:ring-blue-500  hover:border-gray-500 transition-all duration-300 ease-in-out"
+                            className="border border-gray-400 p-4 rounded-lg bg-transparent font-bold focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-gray-500 transition-all duration-300 ease-in-out"
                         />
+                        {errors.from_name && (
+                            <span className="text-red-500 text-sm">{errors.from_name}</span>
+                        )}
+
                         <input
                             type="email"
                             name="user_email"
-                            pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
+                            value={formData.user_email}
+                            onChange={handleInputChange}
                             placeholder="Email Id"
-                            required
-                            className="border border-gray-400 p-4 rounded-lg bg-transparent font-bold focus:outline-none focus:ring-2 focus:ring-blue-500  hover:border-gray-500 transition-all duration-300 ease-in-out"
+                            className="border border-gray-400 p-4 rounded-lg bg-transparent font-bold focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-gray-500 transition-all duration-300 ease-in-out"
                         />
+                        {errors.user_email && (
+                            <span className="text-red-500 text-sm">{errors.user_email}</span>
+                        )}
+
                         <textarea
                             name="message"
+                            value={formData.message}
+                            onChange={handleInputChange}
                             placeholder="Message"
-                            className="border border-gray-400 p-4 rounded-lg bg-transparent font-bold focus:outline-none focus:ring-2 focus:ring-blue-500  hover:border-gray-500 h-44 resize-none transition-all duration-300 ease-in-out"
-                            required
-                        ></textarea>
- 
+                            className="border border-gray-400 p-4 rounded-lg bg-transparent font-bold focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-gray-500 h-44 resize-none transition-all duration-300 ease-in-out"
+                        />
+                        {errors.message && (
+                            <span className="text-red-500 text-sm">{errors.message}</span>
+                        )}
+
                         <button
                             type="submit"
-                            className="mt-6 px-8 py-3 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white 
-                                      font-bold rounded-full transform transition-all duration-300 ease-in-out hover:scale-105
-                                      hover:shadow-lg hover:bg-gradient-to-l"
+                            className="mt-6 px-8 py-3 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-bold rounded-full transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:bg-gradient-to-l"
                         >
                             Submit
                         </button>
@@ -104,7 +168,7 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </section>
     );
 };

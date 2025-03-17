@@ -3,11 +3,12 @@ import Navbar from './layout/Navbar';
 import HeroSection from './components/Home/Hero';
 import About from './components/About/About';
 import Skills from './components/Skill/Skill';
-
-import AOS from 'aos'; // Import AOS
-import 'aos/dist/aos.css'; // Import AOS styles
 import Project from './components/Project/Project';
 import Contact from './components/Contact/Contact';
+
+import AOS from 'aos'; 
+import 'aos/dist/aos.css';
+
 
 export default function App() {
   useEffect(() => {

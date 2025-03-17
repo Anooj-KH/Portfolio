@@ -53,7 +53,7 @@ const Modal = ({ active, setActive, ref, id }) => {
                                 >
                                     {active.title}
                                 </motion.h3>
-                               
+
                             </div>
                             <div className="flex space-x-6">
                                 <motion.a

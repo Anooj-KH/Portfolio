@@ -34,7 +34,10 @@ export default function Project() {
         </div>
       </section>
 
-      <ul className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-5">
+      <ul className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-5 "
+        data-aos="fade-up"
+        data-aos-delay={Math.random() * 500}
+      >
         {cards.map((card) => (
           <ProjectCard key={card.title} card={card} setActive={setActive} id={id} />
         ))}
