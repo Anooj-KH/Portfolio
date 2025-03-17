@@ -38,7 +38,8 @@ export default function Tools() {
                         id={tool.name}
                         data-aos="fade-left"
                         data-aos-delay={Math.random() * 400}
-                        className={`relative group w-full flex flex-col items-center gap-5 p-5 max-w-sm rounded-md border-2 border-black-200 transform transition-all duration-300 ease-in-out shadow-lg hover:scale-105 hover:shadow-4xl`}
+                        className={`relative group w-full flex flex-col items-center gap-5 p-5 max-w-sm rounded-md 
+                        border-2 border-black-200 transform transition-all duration-300 ease-in-out shadow-lg hover:scale-105 hover:shadow-4xl`}
                     >
                         <div className="flex items-center justify-center w-full">
                             <img

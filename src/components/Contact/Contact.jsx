@@ -45,7 +45,7 @@ const Contact = () => {
     };
 
     return (
-        <section  id="contact">
+        <section  id="contact" className="mt-12">
             <Toaster />
             <div className="container mx-auto px-5 md:px-10">
                 <h2 className="title text-4xl font-semibold italic text-center text-indigo-600 font-serif mb-6" data-aos="fade-down">
