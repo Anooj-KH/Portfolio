@@ -38,7 +38,7 @@ const content = {
             },
             {
                 name: "React Native", para: " Develop cross-platform apps effortlessly with React Native’s native performance and seamless integration",
-                logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg", progress: 70
+                logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg", progress: 60
             },
             {
                 name: "Python", para: "Versatile, readable, and powerful – Python’s the go-to language for everything from web to data science!",

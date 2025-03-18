@@ -18,12 +18,14 @@ const Contact = () => {
     const [formData, setFormData] = useState({
         from_name: '',
         user_email: '',
+        phone_number: '',
         message: ''
     });
     
     const [errors, setErrors] = useState({
         from_name: '',
         user_email: '',
+        phone_number: '',
         message: ''
     });
 
@@ -55,6 +57,13 @@ const Contact = () => {
             errors.user_email = "Please enter a valid email.";
         }
 
+        // Phone number validation
+        const phonePattern = /^[0-9]{10}$/; // Basic validation for 10-digit phone number
+        if (formData.phone_number && !phonePattern.test(formData.phone_number)) {
+            formIsValid = false;
+            errors.phone_number = "Please enter a valid 10-digit phone number.";
+        }
+
         // Message validation
         if (!formData.message) {
             formIsValid = false;
@@ -73,6 +82,7 @@ const Contact = () => {
             const emailData = {
                 from_name: formDataObj.get("from_name"),
                 user_email: formDataObj.get("user_email"),
+                phone_number: formDataObj.get("phone_number"),
                 message: formDataObj.get("message"),
                 to_name: 'ANOOJ KH',
             };
@@ -85,8 +95,8 @@ const Contact = () => {
                     (result) => {
                         console.log(result.text);
                         form.current.reset();
-                        setFormData({ from_name: '', user_email: '', message: '' });
-                        setErrors({ from_name: '', user_email: '', message: '' });
+                        setFormData({ from_name: '', user_email: '', phone_number: '', message: '' });
+                        setErrors({ from_name: '', user_email: '', phone_number: '', message: '' });
                         toast.success("Email sent successfully!");
                     },
                     (error) => {
@@ -138,6 +148,18 @@ const Contact = () => {
                             <span className="text-red-500 text-sm">{errors.user_email}</span>
                         )}
 
+                        <input
+                            type="text"
+                            name="phone_number"
+                            value={formData.phone_number}
+                            onChange={handleInputChange}
+                            placeholder="Phone Number"
+                            className="border border-gray-400 p-4 rounded-lg bg-transparent font-bold focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-gray-500 transition-all duration-300 ease-in-out"
+                        />
+                        {errors.phone_number && (
+                            <span className="text-red-500 text-sm">{errors.phone_number}</span>
+                        )}
+
                         <textarea
                             name="message"
                             value={formData.message}
@@ -153,7 +175,7 @@ const Contact = () => {
                             type="submit"
                             className="mt-6 px-8 py-3 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white font-bold rounded-full transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:bg-gradient-to-l"
                         >
-                            Submit
+                            Send Message
                         </button>
                     </form>
 

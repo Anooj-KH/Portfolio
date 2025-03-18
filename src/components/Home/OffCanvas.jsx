@@ -5,8 +5,8 @@ import Resume from '../../assets/Images/Resume.png';
 const OffCanvas = ({ isOpen, toggleOffCanvas }) => {
     return (
         <div className={`fixed inset-0 z-50 bg-transparent backdrop-blur-sm bg-opacity-50 transition-opacity ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-            <div className={`fixed top-0 left-0 h-full w-full sm:w-40 md:w-80 lg:w-96 xl:w-150 bg-gray-800 shadow-lg transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out`}>
-                <div className="flex justify-start item-center p-4 border-b border-gray-700">
+            <div className={`fixed top-0 left-0 h-full w-full sm:w-40 md:w-80 lg:w-96 xl:w-150 bg-gray-700 shadow-lg transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out`}>
+                <div className="flex justify-start item-center p-4 border-b border-white">
                     <button
                         className="text-white"
                         onClick={toggleOffCanvas}
@@ -16,7 +16,7 @@ const OffCanvas = ({ isOpen, toggleOffCanvas }) => {
                     </button>
                     <h2 className="text-lg font-bold ml-8 mt-2 text-white">Download Resume</h2>
                 </div>
-                <div className="p-4 flex flex-col justify-center items-center">
+                <div className="p-4 flex flex-col justify-center items-center shadow-2xl">
                     <img
                         src={Resume}
                         alt="Resume"
@@ -25,7 +25,7 @@ const OffCanvas = ({ isOpen, toggleOffCanvas }) => {
                         data-aos-duration="800"
                         style={{
                             width: "73%",
-                            boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.2)", 
+                            boxShadow: "8px 10px 30px rgba(0, 0, 0)", 
                             display: "block", 
                         }}
                     />

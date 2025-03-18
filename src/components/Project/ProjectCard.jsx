@@ -9,7 +9,7 @@ const ProjectCard = ({ card, setActive, id }) => {
       // data-aos="fade-up"
       // data-aos-delay={Math.random() * 400}
       className="p-4 flex flex-col border-1 bg-blue-200 shadow-lg hover:scale-106 hover:shadow-4xl  
-      dark:hover:bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-xl cursor-pointer"
+      dark:hover:bg-gradient-to-r from-blue-200 via-purple-300 to-pink-200 rounded-xl cursor-pointer"
     >
       <div className="flex gap-4 flex-col w-full">
         <motion.div layoutId={`image-${card.title}-${id}`}>
