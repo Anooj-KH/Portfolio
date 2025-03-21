@@ -2,8 +2,8 @@ import React from 'react';
 
 const tools = [
     {
-        name: 'Figma',
-        logo: 'https://upload.wikimedia.org/wikipedia/commons/7/70/Figma.svg',
+        name: 'Cursor AI',
+        logo: 'https://paulstamatiou.com/_next/image?url=%2Fgear%2Fcursor-app-icon.png&w=3840&q=75',
     },
     {
         name: 'VS Code',
