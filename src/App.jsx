@@ -32,7 +32,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="bg-[url('./assets/bg/1.jpg')] bg-cover bg-center bg-fixed min-h-screen">
+    <div className="bg-[url('./assets/bg/1.jpg')] bg-cover bg-center bg-fixed min-h-screen overflow-y-scroll scrollbar-hide">
       <Navbar/>
       <HeroSection />
       <About />

@@ -24,7 +24,7 @@ export default function Project() {
   return (
     <div >
       <section id="project">
-        <div className="md:container px-5 py-14 lg:ml-18">
+        <div className="container mx-auto px-5 py-14">
           <h2 className="text-4xl font-semibold italic text-center text-indigo-600 font-serif p-4" data-aos="fade-down">
             Project's
           </h2>
