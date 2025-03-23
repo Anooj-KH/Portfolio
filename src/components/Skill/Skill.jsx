@@ -54,7 +54,7 @@ export default function Skills() {
 
     return (
         <section id="skills">
-            <div className="md:container px-5 py-14 lg:ml-18">
+            <div className="md:container px-5 py-14 ">
                 <h2 className="title text-4xl font-semibold italic text-center text-indigo-600 font-serif mt-5 p-4" data-aos="fade-down">
                     {content.skills.title}
                 </h2>
