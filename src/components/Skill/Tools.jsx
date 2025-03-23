@@ -31,24 +31,24 @@ export default function Tools() {
                 Top Tools Used
             </h4>
 
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 mt-8">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
                 {tools.map((tool, index) => (
                     <div
                         key={index}
                         id={tool.name}
                         data-aos="fade-left"
                         data-aos-delay={Math.random() * 400}
-                        className={`relative group w-full flex flex-col items-center gap-5 p-5 max-w-sm rounded-md 
+                        className={`relative group w-full flex flex-col items-center gap-3 p-3 max-w-sm rounded-md 
                         border-2 border-black-200 transform transition-all duration-300 ease-in-out shadow-lg hover:scale-105 hover:shadow-4xl`}
                     >
                         <div className="flex items-center justify-center w-full">
                             <img
                                 src={tool.logo}
                                 alt={tool.name}
-                                className="w-12 h-12 object-contain group-hover:scale-125 duration-200"
+                                className="w-10 h-10 object-contain group-hover:scale-125 duration-200"
                             />
                         </div>
-                        <h5 className="text-xl font-semibold text-center text-slate-800">{tool.name}</h5>
+                        <h5 className="text-lg font-semibold text-center text-slate-800">{tool.name}</h5>
                     </div>
                 ))}
             </div>
