@@ -59,7 +59,10 @@ const Contact = () => {
 
         // Phone number validation
         const phonePattern = /^[0-9]{10}$/; // Basic validation for 10-digit phone number
-        if (formData.phone_number && !phonePattern.test(formData.phone_number)) {
+        if (!formData.phone_number) {
+            formIsValid = false;
+            errors.phone_number = "Phone number is required.";
+        } else if (!phonePattern.test(formData.phone_number)) {
             formIsValid = false;
             errors.phone_number = "Please enter a valid 10-digit phone number.";
         }
