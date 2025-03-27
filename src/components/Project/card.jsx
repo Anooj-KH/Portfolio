@@ -103,7 +103,7 @@ export const cards = [
         title: 'Host Cloud Website',
         src: hostcloud,
         ctaText: 'Preview',
-        // ctaLink: 'https://www.billieeilish.com/',
+        ctaLink: 'https://www.billieeilish.com/',
         ctagit: 'View Code',
         ctagitLink: 'https://github.com/Anooj-KH/Host-Cloud',
         content: () => (
