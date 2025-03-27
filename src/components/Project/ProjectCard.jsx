@@ -16,7 +16,7 @@ const ProjectCard = ({ card, setActive, id }) => {
           <img
             src={card.src}
             alt={card.title}
-            className="h-60 w-full rounded-lg object-cover object-top"
+            className="h-50 w-full rounded-lg object-cover object-top"
           />
         </motion.div>
         <div className="flex justify-center items-center flex-col">
