@@ -6,7 +6,7 @@ import Tools from './Tools';
 const content = {
     skills: {
         title: "Skills",
-        subtitle: "MY TOP SKILLS",
+        subtitle: "MY TOP SKILLS",      
         skills_content: [
             {
                 name: "HTML", para: "The foundation of every great website, building the web one tag at a time!",
@@ -15,7 +15,7 @@ const content = {
             {
                 name: "CSS", para: "Turning plain HTML into a stylish masterpiece with CSS!",
                 logo: "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg", progress: 90
-            },
+            }, 
             {
                 name: "Bootstrap", para: "Speed up your development with sleek, responsive, and customizable designs!",
                 logo: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg", progress: 90
