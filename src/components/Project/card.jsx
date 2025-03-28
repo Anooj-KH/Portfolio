@@ -28,7 +28,7 @@ export const cards = [
         title: 'E-Commerce Webpage',
         src: ekart,
         ctaText: 'Preview',
-        // ctaLink: 'https://ui.aceternity.com/templates',
+        ctaLink: 'https://ekart-product-details.vercel.app/',
         ctagit: 'View Code',
         ctagitLink: 'https://github.com/Anooj-KH/Ekart-product-details',
         content: () => (
