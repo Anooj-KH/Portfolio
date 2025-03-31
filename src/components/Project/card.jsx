@@ -3,7 +3,7 @@ import habittracker from '../../assets/Images/Projectimgs/HabitTracker.png'
 import ekart from '../../assets/Images/Projectimgs/Ekart.png'
 import recipeapp from '../../assets/Images/Projectimgs/Native-receipe-app.png'
 import chatbot from '../../assets/Images/Projectimgs/Chatbot.png'
-// import weatherapp from '../../assets/Images/Projectimgs/Weather-app.png'
+import weatherapp from '../../assets/Images/Projectimgs/Weather-app.png'
 import hostcloud from '../../assets/Images/Projectimgs/Host-cloud.png'
 import formvalidation from '../../assets/Images/Projectimgs/Form-validation.png'
 import ateam from '../../assets/Images/Projectimgs/Ateam.png'
@@ -86,11 +86,11 @@ export const cards = [
     },
     {
         title: 'Weather Application',
-        // src: 'https://assets.aceternity.com/demos/adele.jpeg',
+        src: weatherapp,
         ctaText: 'Preview',
-        // ctaLink: 'https://www.adele.com/',
+        ctaLink: 'https://weather-app-mu-five-23.vercel.app/',
         ctagit: 'View Code',
-        // ctagitLink: 'https://ui.aceternity.com/templates',
+        ctagitLink: 'https://github.com/Anooj-KH/Weather-App',
         content: () => (
             <p>
                 A Weather Application provides real-time weather updates, forecasts, and weather-related information to help users plan their day.
