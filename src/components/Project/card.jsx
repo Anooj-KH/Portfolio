@@ -2,6 +2,7 @@ import React from 'react';
 import habittracker from '../../assets/Images/Projectimgs/HabitTracker.png'
 import ekart from '../../assets/Images/Projectimgs/Ekart.png'
 import recipeapp from '../../assets/Images/Projectimgs/Native-receipe-app.png'
+import crud from '../../assets/Images/Projectimgs/CRUD.png'
 import chatbot from '../../assets/Images/Projectimgs/Chatbot.png'
 import weatherapp from '../../assets/Images/Projectimgs/Weather-app.png'
 import hostcloud from '../../assets/Images/Projectimgs/Host-cloud.png'
@@ -28,9 +29,9 @@ export const cards = [
         title: 'E-Commerce Webpage',
         src: ekart,
         ctaText: 'Preview',
-        ctaLink: 'https://ekart-product-details.vercel.app/',
+        ctaLink: 'https://e-kart-webpage.vercel.app/',
         ctagit: 'View Code',
-        ctagitLink: 'https://github.com/Anooj-KH/Ekart-product-details',
+        ctagitLink: 'https://github.com/Anooj-KH/E-kart-Webpage',
         content: () => (
             <p>
                 An E-Commerce Webpage allows users to browse products, make purchases, and manage orders, providing a seamless online shopping experience.
@@ -41,11 +42,11 @@ export const cards = [
     },
     {
         title: 'CRUD Operation using Axios',
-        src: 'https://assets.aceternity.com/demos/ed-sheeran.jpeg',
-        ctaText: 'Preview',
-        // ctaLink: 'https://www.edsheeran.com/',
+        src: crud,
+        ctaText: 'Preview', 
+        ctaLink: 'https://crud-application-green.vercel.app/',
         ctagit: 'View Code',
-        // ctagitLink: 'https://ui.aceternity.com/templates',
+        ctagitLink: 'https://github.com/Anooj-KH/CRUD-Application',
         content: () => (
             <p>
                 This app demonstrates how to perform CRUD (Create, Read, Update, Delete) operations using Axios to interact with a backend API.
@@ -103,9 +104,9 @@ export const cards = [
         title: 'Host Cloud Website',
         src: hostcloud,
         ctaText: 'Preview',
-        ctaLink: 'https://www.billieeilish.com/',
+        ctaLink: 'https://host-cloud-jas8rmjgy-anooj-khs-projects.vercel.app/',
         ctagit: 'View Code',
-        ctagitLink: 'https://github.com/Anooj-KH/Host-Cloud',
+        ctagitLink: 'https://github.com/Anooj-KH/HostCloud',
         content: () => (
             <p>
                 A Host Cloud Website offers cloud-based hosting services for your website, ensuring fast load times and reliable performance.

@@ -24,7 +24,7 @@ const OffCanvas = ({ isOpen, toggleOffCanvas }) => {
                         data-aos-delay="300"
                         data-aos-duration="800"
                         style={{
-                            width: "73%",
+                            width: "65%",
                             boxShadow: "8px 10px 30px rgba(0, 0, 0)", 
                             display: "block", 
                         }}
