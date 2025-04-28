@@ -14,9 +14,9 @@ export const cards = [
         title: 'Habit Tracker',
         src: habittracker,
         ctaText: 'Preview',
-        // ctaLink: 'https://ui.aceternity.com/templates',
+        ctaLink: '',
         ctagit: 'View Code',
-        // ctagitLink: 'https://ui.aceternity.com/templates',
+        ctagitLink: '',
         content: () => (
             <p>
                 A Habit Tracker helps you stay on top of your goals by allowing you to log daily habits and track your progress over time.
@@ -59,7 +59,7 @@ export const cards = [
         title: 'Recipe App using React Native',
         src: recipeapp,
         ctaText: 'Preview',
-        // ctaLink: 'https://www.theweeknd.com/',
+        ctaLink: '',
         ctagit: 'View Code',
         ctagitLink: 'https://github.com/Anooj-KH/React-Native-Recipe-Page',
         content: () => (
@@ -74,9 +74,9 @@ export const cards = [
         title: 'Chatbot using React',
         src: chatbot,
         ctaText: 'Preview',
-        // ctaLink: 'https://www.dualipa.com/',
+        ctaLink: '',
         ctagit: 'View Code',
-        // ctagitLink: 'https://ui.aceternity.com/templates',
+        ctagitLink: '',
         content: () => (
             <p>
                 A React-based Chatbot can answer questions, provide information, and assist users interactively using conversational AI techniques.
