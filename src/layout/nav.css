@@ -22,18 +22,10 @@ nav a {
     display: flex;
     font-size: 1.1rem;
     position: relative;
-}
-
-nav a:hover {
-    background: rgba(0, 0, 0, 0.4);
-    color: #1728e5;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 
-nav a.active {
-    background: var(--color-bg);
-    color: var(--color-white);
-}
 
 /* Tooltip styles */
 nav a::after {
@@ -43,10 +35,10 @@ nav a::after {
     left: 50%;
     transform: translateX(-50%);
     padding: 5px 10px;
-    background-color: #27262a;
+    background-color: #6638f2;
     color: white;
-    border-radius: 5px;
-    font-size: 14px;
+    border-radius: 15px;
+    font-size: 15px;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;

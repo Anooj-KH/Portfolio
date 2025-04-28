@@ -24,7 +24,7 @@ export default function Project() {
   return (
     <div >
       <section id="project">
-        <div className="container mx-auto px-5 py-14">
+        <div className="container mx-auto">
           <h2 className="text-4xl font-semibold italic text-center text-indigo-600 font-serif p-4" data-aos="fade-down">
             Project's
           </h2>
@@ -34,7 +34,7 @@ export default function Project() {
         </div>
       </section>
 
-      <ul className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-5 "
+      <ul className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-5 mt-4 "
         data-aos="fade-up"
         data-aos-delay={Math.random() * 500}
       >

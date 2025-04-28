@@ -30,7 +30,7 @@ const OffCanvas = ({ isOpen, toggleOffCanvas }) => {
                         }}
                     />
                     <a
-                        href='https://drive.google.com/uc?export=download&id=10dMWSjmM-iEqQFR1Ut87sknOzIkzyX6l' 
+                        href='https://drive.google.com/drive/folders/1VICM1hEn-l_mK2gZEQmUYPPBz7ASNLVF' 
                         download="Resume.pdf"  
                         className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-700 transition duration-300"
                     >

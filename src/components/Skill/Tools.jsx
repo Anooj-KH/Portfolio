@@ -24,14 +24,17 @@ const tools = [
 ];
 
 export default function Tools() {
-    
+
     return (
         <div className="md:container px-5 py-14">
-            <h4 className="subtitle text-2xl font-semibold italic text-center text-indigo-500 font-serif" data-aos="fade-down">
+            <h4
+                className="subtitle text-2xl font-semibold italic text-center text-indigo-500 font-serif"
+                data-aos="fade-down"
+            >
                 Top Tools Used
             </h4>
 
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8 justify-center">
                 {tools.map((tool, index) => (
                     <div
                         key={index}
@@ -39,7 +42,8 @@ export default function Tools() {
                         data-aos="fade-left"
                         data-aos-delay={Math.random() * 400}
                         className={`relative group w-full flex flex-col items-center gap-3 p-3 max-w-sm rounded-md 
-                        border-2 border-black-200 transform transition-all duration-300 ease-in-out shadow-lg hover:scale-105 hover:shadow-4xl`}
+                        border-2 border-black-200 transform transition-all duration-300 ease-in-out shadow-lg 
+                        hover:scale-105 hover:shadow-4xl`}
                     >
                         <div className="flex items-center justify-center w-full">
                             <img

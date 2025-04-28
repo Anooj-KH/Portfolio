@@ -11,7 +11,8 @@ export default function Hero() {
         image: Heropic,
     };
     const titles = [
-        "Web Designer",
+        "Web Developer",
+        "MObile App Developer",
         "UI/UX Designer",
         "Front End Developer",
         "React Developer",
@@ -62,10 +63,15 @@ export default function Hero() {
                             data-aos-delay="800">
                             {currentTitle}
                         </p>
-
-                        <p className="mt-5 text-base sm:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed text-center " style={{ wordSpacing: "0.4em" }}>
-                            I’m a beginner in web development and design, focused on creating user-friendly and visually appealing websites.
-                            I'm eager to help brands build great digital experiences and continue learning along the way.
+                        <p
+                            className="mt-8 text-base sm:text-lg md:text-xl text-gray-900 indent-10 max-w-3xl mx-auto font-light
+                             leading-loose text-justify tracking-wide "
+                            style={{ wordSpacing: "0.5em", lineHeight: "1.7em" }}
+                        >
+                            I’m a web and mobile app developer passionate about creating intuitive, visually appealing digital experiences.
+                            I help brands bring their ideas to life through user-friendly, impactful designs and smooth functionality.
+                            Committed to continuous learning and growth, I’m always exploring new tools and technologies to build innovative,
+                            high-quality solutions.
                         </p>
 
                         <div className="flex justify-center">
@@ -91,7 +97,7 @@ export default function Hero() {
                                 className="mt-6 px-8 py-3 ml-5 bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white 
                                            font-semibold rounded-full transform transition-all duration-300 ease-in-out hover:scale-105 
                                            hover:shadow-lg hover:bg-gradient-to-l flex items-center space-x-2"
-                                           
+
                                 data-aos="zoom-in"
                                 data-aos-delay="500"
                                 onClick={toggleOffCanvas}

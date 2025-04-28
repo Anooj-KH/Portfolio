@@ -31,26 +31,28 @@ export default function About() {
 
                         {/* Text */}
                         <div
-                            className="flex-1 w-full text-center p-4 bg-white bg-[url('./assets/bg/2.jpg')] bg-cover bg-fixed lg:text-left"
+                            className="flex-1 w-full text-center p-4 bg dark:bg-gray-800 lg:text-left rounded-lg transition-transform duration-300 ease-in-out hover:scale-105"
                             data-aos="flip-down"
                             data-aos-delay="300"
                         >
-                            <h5 className="text-lg sm:text-xl md:text-2xl lg:text-2xl indent-40 leading-relaxed font-serif italic mt-10">
-                                I’m Anooj, a front-end developer with a passion for creating intuitive and engaging web experiences.
-                                As a fresher, I bring a solid foundation in HTML, CSS, and JavaScript, along with a commitment to clean,
-                                efficient code. I love transforming ideas into functional, user-friendly designs and am eager to keep growing my skills in the world of web development.
+                            <h5 className=" text-white text-sm sm:text-base md:text-lg lg:text-xl indent-4 leading-relaxed font-light font-serif italic mt-4 sm:mt-6">
+                                Hi, I’m <span className="font-bold text-indigo-600">Anooj</span> — a passionate front-end and mobile app developer
+                                dedicated to crafting seamless, user-centric digital experiences.<br />
+                                As a fresher, I bring a strong foundation in HTML, CSS, JavaScript, and React, along with growing expertise in React Native
+                                for cross-platform mobile development. I thrive on transforming creative ideas into clean, functional, and responsive designs — both on the web and on mobile devices.<br />
+                                I’m driven by curiosity, continuous learning, and the joy of building intuitive interfaces that not only look great but also feel effortless to use.
                                 <br /><br />
-                                <span className=' font-sans font-light'> Let’s build something great together!</span>
+                                <span className="font-sans font-light">Let’s collaborate and bring meaningful digital experiences to life!</span>
                             </h5>
 
                             <div className="flex justify-center lg:justify-center mt-5">
                                 <Social />
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
-
         </>
     )
 }
