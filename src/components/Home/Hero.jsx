@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Heropic from '../../assets/Images/herosection.png';
+import Heropic from '../../assets/Images/anooj.png';
 import { FaDownload } from "react-icons/fa6";
 import OffCanvas from './OffCanvas'
 
